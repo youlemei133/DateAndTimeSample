@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.hudawei.dateandtimesample.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. 文本时钟"
+            />
+
+        <TextClock
+            android:id="@+id/textClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:format12Hour="yyyy/MM/dd h:mm:ss a"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.图形时钟"
+            />
+
+        <AnalogClock
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:dial="@mipmap/clock_back"
+            android:hand_hour="@mipmap/clock_hour"
+            android:hand_minute="@mipmap/clock_minuets"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.计时器"
+            />
+
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="start"
+                android:text="开始"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="stop"
+                android:text="停止"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="reset"
+                android:text="重置"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="format"
+                android:text="格式化"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.日期选择器"
+            />
+        <!--
+         android:datePickerMode="calendar"设置模式calendar、spinner
+         android:firstDayOfWeek="7",设置星期从几开始 星期天为1
+         android:headerBackground="@color/colorPrimaryDark",最上面显示的背景色
+
+         设置时间选择的范围，只在spinner模式下才有用
+         android:endYear="2015" 最大值
+         android:startYear="2013" 最小值
+        -->
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:datePickerMode="calendar"
+            android:firstDayOfWeek="7"
+            android:headerBackground="@color/colorPrimaryDark"
+
+            android:endYear="2015"
+            android:startYear="2013"
+            android:id="@+id/datePicker"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5.时间选择器"
+            />
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:timePickerMode="clock"
+            android:headerBackground="@color/colorPrimaryDark"
+            android:id="@+id/timePicker"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6.日历"
+            />
+        <CalendarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:firstDayOfWeek="2"
+            android:id="@+id/calendarView"
+            />
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            />
+    </LinearLayout>
+</ScrollView>
